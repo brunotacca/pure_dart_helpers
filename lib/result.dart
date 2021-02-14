@@ -10,6 +10,7 @@ Result<F, S> success<F, S>(S s) => new Success(s);
 /// Union of two generic types.
 /// Instances of [Result] are either an instance of [Failure] or [Success].
 ///
+/// Both are generic types and can carry any kind of object.
 /// [Failure] is often used for "failure" cases.
 /// [Success] is often used for "success" cases.
 abstract class Result<F, S> {
