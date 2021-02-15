@@ -1,5 +1,6 @@
 // test stuff
 
+import 'exception.dart';
 import 'result.dart';
 
 void main() {
@@ -18,4 +19,6 @@ void main() {
     (failure) => print(failure),
     (success) => print(success),
   );
+
+  throw NotFoundException();
 }
