@@ -1,4 +1,10 @@
-import 'src/app_exception.dart';
+abstract class AppException implements Exception {
+  final int code;
+  final String message;
+  AppException(this.code, this.message);
+  @override
+  String toString() => "[$code] $message";
+}
 
 final Map<int, String> exCodeKeywords = {
   403: "FORBIDDEN",

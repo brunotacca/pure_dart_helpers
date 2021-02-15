@@ -32,7 +32,7 @@ class Failure<F, S> extends Result<F, S> {
   const Failure(this._f);
   F get value => _f;
   @override
-  B fold<B>(B ifFailure(F l), B ifSuccess(S r)) => ifFailure(_f);
+  B fold<B>(B ifFailure(F f), B ifSuccess(S r)) => ifFailure(_f);
   @override
   bool operator ==(other) => other is Failure && other._f == _f;
   @override
@@ -45,7 +45,7 @@ class Success<F, S> extends Result<F, S> {
   const Success(this._s);
   S get value => _s;
   @override
-  B fold<B>(B ifFailure(F f), B ifSuccess(S r)) => ifSuccess(_s);
+  B fold<B>(B ifFailure(F f), B ifSuccess(S s)) => ifSuccess(_s);
   @override
   bool operator ==(other) => other is Success && other._s == _s;
   @override
