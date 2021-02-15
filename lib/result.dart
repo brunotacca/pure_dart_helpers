@@ -2,12 +2,6 @@
 /// Made for personal use and simple error handling through different architecture layers
 /// Easily understandable and maintainable.
 
-/// Factories for conveniance.
-/// Facilitates the creation of a [Result].
-/// Removed - Trying different approach
-// Result<F, S> failure<F, S>(F f) => new Failure(f);
-// Result<F, S> success<F, S>(S s) => new Success(s);
-
 /// Union of two generic types.
 /// Instances of [Result] are either an instance of [Failure] or [Success].
 ///
@@ -30,10 +24,6 @@ abstract class Result<F, S> {
 
   @override
   String toString() => fold((f) => 'Failure($f)', (s) => 'Success($s)');
-
-  /// Children static verbose creators
-  static Success<F, S> success<F, S>(S s) => new Success(s);
-  static Failure<F, S> failure<F, S>(F f) => new Failure(f);
 }
 
 /// [Failure] case of [Result]
