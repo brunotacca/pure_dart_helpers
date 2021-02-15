@@ -7,10 +7,10 @@ final Map<int, String> exCodeKeywords = {
 
 class ForbiddenException extends AppException {
   static final _code = 403;
-  ForbiddenException() : super(_code, exCodeKeywords[_code]!);
+  ForbiddenException() : super(_code, exCodeKeywords[_code] ?? "");
 }
 
 class NotFoundException extends AppException {
   static final _code = 404;
-  NotFoundException() : super(_code, exCodeKeywords[_code]!);
+  NotFoundException() : super(_code, exCodeKeywords[_code] ?? "");
 }
